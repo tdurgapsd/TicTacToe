@@ -63,7 +63,14 @@ const checkWinner = () => {
 			if(pos1val == pos2Val && pos2Val == pos3Val){
 				showWinner(pos1val);
 			}
-		} 
+		}
+		// Check for draw
+		if(Array.from(boxes).every(box => box.innerText !== "")){	
+			msg.innerText = "It's a Draw!";
+			msgContainer.classList.remove("hide");
+			disableBoxes();
+			return;
+		}
 	}
 };
 
